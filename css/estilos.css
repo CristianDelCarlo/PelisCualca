@@ -1,0 +1,24 @@
+:root {
+    --bg1:#00004c;
+    --bg2:#1808f9;
+    --txt:white;
+}
+a {
+    color:var(--txt)
+}
+nav {
+    background-color: var(--bg2);
+}
+main{
+    background-color: var(--bg1);
+}
+
+h1{
+    font-size: 1.8rem;
+    color: var(--txt);
+}
+
+h2{
+    font-size: 1.5rem;
+    color: var(--txt);
+}
