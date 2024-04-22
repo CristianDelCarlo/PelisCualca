@@ -28,6 +28,7 @@ a {
 .topnav{
     position: fixed;
     width: 100%;
+    z-index: 10;
  }
 
 nav {
@@ -65,19 +66,116 @@ nav>ul>li{
 
 main{
     background-color: var(--bg1);
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 h1{
-    font-size: 2.8rem;
+    font-size: 3.2rem;
+    font-weight: 400;
     color: var(--txt);
     text-align: center;
 }
 
 h2{
-    font-size: 2.5rem;
+    font-size: 2rem;
+    font-weight: 300;
     color: var(--txt);
     text-align: center;
+}
+
+.displayFull{
+    height: 90vh;
+    text-align: center;
+    background:linear-gradient(to right top, #0000008a, #0000008a), url(../assets/img/banner.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+.separador1{
+    height: 4rem;
+}
+
+.botónMain{
+    background-color: var(--bg2);
+    border: solid;
+    border-color: var(--txt);
+    border-width: 2px;
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color:var(--txt);
+}
+
+.enLínea form {
+    display: inline-block;
+}
+
+.enLínea input[type="text"]{
+    border-radius: 10px;
+    border: solid var(--txt);
+    padding: 10px;
+    width: 350px;
+    height: 38px;
+}
+
+.enLínea input[type="text"],
+.enLínea a.botónMain {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 20px;
+}
+
+hr{
+    border: 1px solid var(--bg2);
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.displayMid{
+    height: 50vh;
+    text-align: center;  
+}
+
+.grilla{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 65px;
+}
+
+.grilla img{
+    width:280px;
+    height: 420px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.margenDerecho{
+    margin-right: 20px;
+}
+
+.scrollHoriz{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0px 0px 40px 0px;
+
+}
+
+.scrollHoriz img{
+    width:240px;
+    height: 360px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 footer nav {

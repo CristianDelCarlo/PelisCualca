@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Películas Cualca</title>
     <script src="https://kit.fontawesome.com/202218600a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/estilos.css"></head>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
 <body>
     <header>
         <nav class="topnav">
             <a href="#">
                 <i class="fa-solid fa-clapperboard"></i>
-                <div>Películas Cualca</div>    
+                <div>Películas Cualca</div>
             </a>
             <ul class="haciaDerecha">
                 <li><a href="#">Tendencias</a></li>
@@ -23,23 +26,36 @@
     </header>
 
     <main>
-        <section>
-            <h1>Películas y series recomendadas en un solo lugar</h1>
+        <section class="displayFull">
+            <div class="separador1"></div>
+            <h1>Películas y series recomendadas</h1>
+            <h1>en un solo lugar</h1>
+            <div class="separador1"></div>
             <h2>Disfrutá donde quieras.</h2>
             <h2>Cancelá en cualquier momento.</h2>
-            <a href="#">Registrarse</a>
-        </section>
-        
-        <section>
-            <h2>¿Qué estas buscando para ver?</h2>
-            <form action="">
-                <input type="text">
-            </form>
-            <a href="#">Buscar</a>
+            <div class="separador1"></div>
+            <a href="#" class="botónMain">Registrarse</a>
         </section>
 
-        <section>
+        <section class="displayMid">
+            <div class="separador1"></div>
+            <div class="separador1"></div>
+            <h2>¿Qué estas buscando para ver?</h2>
+            <div class="separador1"></div>
+            <div class="enLínea">
+                <form action="">
+                    <input type="text">
+                </form>
+                <a href="#" class="botónMain">Buscar</a>
+            </div>
+        </section>
+
+        <section class="alCentro">
+            <hr>
+            <div class="separador1"></div>
             <h2>Recomendaciones Cualca</h2>
+            <div class="separador1"></div>
+            <div class="grilla">
             <img src="assets/img/pel01.jpg" alt="Mulholland Drive">
             <img src="assets/img/pel02.jpg" alt="Memento">
             <img src="assets/img/pel03.jpg" alt="Top Secret (Súper Secreto)">
@@ -48,21 +64,32 @@
             <img src="assets/img/pel06.jpg" alt="El Resplandor">
             <img src="assets/img/pel07.jpg" alt="Amores Perros">
             <img src="assets/img/pel08.jpg" alt="La Naranja Mecánica">
-            <button>Anterior</button>
-            <button>Siguiente</button>
+            </div>
+            <div class="separador1"></div>
+            <div class="enLínea">
+                <button class="botónMain margenDerecho">Anterior</button>
+                <button class="botónMain">Siguiente</button>
+            </div>
+            <div class="separador1"></div>
         </section>
 
         <section>
+            <hr>
+            <div class="separador1"></div>
             <h2>Las más aclamadas</h2>
-            <img src="assets/img/acla01.jpg" alt="">
-            <img src="assets/img/acla02.jpg" alt="">
-            <img src="assets/img/acla03.jpg" alt="">
-            <img src="assets/img/acla04.jpg" alt="">
-            <img src="assets/img/acla05.jpg" alt="">
-            <img src="assets/img/acla06.jpg" alt="">
-            <img src="assets/img/acla07.jpg" alt="">
-            <img src="assets/img/acla08.jpg" alt="">
-        </section>     
+            <div class="separador1"></div>
+            <div class="scrollHoriz">
+                <img src="assets/img/acla01.jpg" alt="">
+                <img src="assets/img/acla02.jpg" alt="">
+                <img src="assets/img/acla03.jpg" alt="">
+                <img src="assets/img/acla04.jpg" alt="">
+                <img src="assets/img/acla05.jpg" alt="">
+                <img src="assets/img/acla06.jpg" alt="">
+                <img src="assets/img/acla07.jpg" alt="">
+                <img src="assets/img/acla08.jpg" alt="">
+            </div>
+            <div class="separador1"></div>
+        </section>
     </main>
 
     <footer>
@@ -73,7 +100,8 @@
                 <li><a href="#">Ayuda</a></li>
                 <li><a href="#" class="botónNav">Administrador de Películas</a></li>
             </ul>
-        </nav> 
-    </footer>    
+        </nav>
+    </footer>
 </body>
+
 </html>
