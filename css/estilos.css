@@ -83,6 +83,14 @@ h2{
     text-align: center;
 }
 
+p{
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: var(--txt);
+    text-align: justify;
+    margin: 20px 75px 0px 0px;
+}
+
 .displayFull{
     height: 90vh;
     text-align: center;
@@ -184,4 +192,99 @@ footer nav {
 
 .alCentro{
     text-align: center;
+}
+
+.displayFullDet{
+    height: 90vh;
+    text-align: center;
+}
+
+.fondoDet{
+    background:linear-gradient(to right top, #0000008a, #0000008a), url(../assets/img/mulhollanddrive.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.displayFullDet img{
+    width:340px;
+    height: 510px;
+    border-radius: 5px;
+    margin: 100px
+}
+
+.texto {
+    margin-left: 20px;
+}
+
+video{
+    width: 750px;
+}
+
+.displayFullRegSes{
+    
+    background:linear-gradient(to right top, #0000008a, #0000008a), url(../assets/img/pngwing.com.png);
+    background-position: initial;
+}
+
+.regSes{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align:left;
+    background-color: var(--bg1);
+    padding: 50px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.regSes section {
+    display: flex;
+    flex-direction: column;
+}
+
+.regSes form {
+    width: 100%;
+}
+
+.regSes input, .regSes select {
+    padding: 4px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    color:var(--bg1);
+    width: 85%;
+    margin-top: 10px;
+}
+
+.txtBlanco, #botónBlanco {
+    color:var(--txt);
+    width: 85%;
+    margin-top: 10px;
+}
+
+.enLínea2{
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.regSes input[type="checkbox"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.regSes .textoCheck {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+.regSes a {
+    margin-top: 10px; 
 }
