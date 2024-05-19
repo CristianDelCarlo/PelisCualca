@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Cualca del Tiempo</title>
+    <script src="https://kit.fontawesome.com/202218600a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+
+<body class="displayFullRegSes">
+    <header>
+        <a href="../index.html">
+            <i class="fa-solid fa-clapperboard"></i>
+            <div class="enLínea2 animate__animated animate__rubberBand">Películas Cualca</div>
+        </a>
+    </header>
+    <main class="regSes">
+        <section>
+            <h2>El tiempo en Rosario  <img id="weatherIcon" src="" alt=""></h2>
+            <div>
+                <p><span>Ciudad:</span> <span id="city"></span></p>
+                <p><span>Temperatura:</span> <span id="temperature"></span> °C</p>
+                <p><span>Clima:</span> <span id="weather"></span></p>
+                <p><span>Humedad:</span> <span id="humidity"></span>%</p>
+                <p><span>Velocidad del Viento:</span> <span id="windSpeed"></span> km/h</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        async function fetchWeather(city) {
+            const url = "https://api.openweathermap.org/data/2.5/weather";
+            const apiKey = "21e3195e9bfeb6879e788ec605b09ab0";
+            const units = "metric";
+            const lang = "es";
+            const response = await fetch(`${url}?q=${city}&appid=${apiKey}&units=${units}&lang=${lang}`);
+            const data = await response.json();
+            return data;
+        }
+
+        async function updateWeatherCard(city) {
+            const weatherData = await fetchWeather(city);
+            document.getElementById("city").textContent = weatherData.name;
+            document.getElementById("temperature").textContent = weatherData.main.temp;
+            document.getElementById("weather").textContent = weatherData.weather[0].description;
+            document.getElementById("humidity").textContent = weatherData.main.humidity;
+            var veloc = weatherData.wind.speed*3.6;
+            document.getElementById("windSpeed").textContent = veloc;
+            const iconCode = weatherData.weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/w/${iconCode}.png`;
+            document.getElementById("weatherIcon").src = iconUrl;
+            document.getElementById("weatherIcon").alt = weatherData.weather[0].description;
+        }
+
+        updateWeatherCard("Rosario");
+
+    </script>
+</body>
+
+</html>

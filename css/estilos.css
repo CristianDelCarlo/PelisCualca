@@ -330,3 +330,7 @@ video{
 .regSes a {
     margin-top: 10px; 
 }
+
+#weatherIcon {
+    vertical-align: middle;
+}
