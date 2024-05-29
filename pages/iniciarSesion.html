@@ -7,7 +7,7 @@
     <title>Iniciar Sesión</title>
     <script src="https://kit.fontawesome.com/202218600a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body class="displayFullRegSes">
@@ -19,16 +19,92 @@
     </header>
     <main class="regSes">
         <section>
-            <form action="" method="get">
+            <form action="" method="get" id="formSesion">
                 <h2>Iniciar Sesión</h2>
-                <input type="email" placeholder="Email" id="email" name="email">
-                <input type="password" placeholder="Contraseña" id="password" name="password">
+                <input type="email" placeholder="Email" id="email" name="email" class="formInput">
+                <div class="mensaje_error" id="emailError"></div>
+                <input type="password" placeholder="Contraseña" id="password" name="password" class="formInput">
+                <div class="mensaje_error" id="passwordError"></div>
                 <input class="boton botónMain" type="submit" value="Iniciar Sesión" id="botónBlanco">
                 <div class="separador2"></div>
                 <a href="registrarse.html">Registrarse</a>
             </form>
         </section>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("formSesion").addEventListener("submit", (event) => {
+                event.preventDefault();
+                const esValido = validacionCampos();
+                if (esValido) {
+                    alert("¡El formulario ha sido enviado correctamente!");
+                }
+            });
+
+            document.querySelectorAll(".formInput").forEach((input) => {
+                input.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter") {
+                        event.preventDefault();
+                        validacionCampos();
+                    }
+                });
+            });
+        });
+
+
+
+
+        const validacionCampos = () => {
+            reseteoMensajeError();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            let esValido = true;
+
+            if (!esValidoEmail(email)) {
+                mostrarMensajeError("emailError", "Por favor ingrese un correo electrónico válido.");
+                document.getElementById("email").classList.add("noEsValido");
+                esValido = false;
+            } else {
+                document.getElementById("email").classList.remove("noEsValido");
+                document.getElementById("email").classList.add("esValido");
+            }
+
+            if (password.length < 8) {
+                mostrarMensajeError("passwordError", "La contraseña debe tener al menos 8 caracteres.");
+                document.getElementById("password").classList.add("noEsValido");
+                esValido = false;
+            } else {
+                document.getElementById("password").classList.remove("noEsValido");
+                document.getElementById("password").classList.add("esValido");
+            }
+
+            return esValido;
+
+
+        };
+
+        const esValidoEmail = (email) => {
+            const emailPatron = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPatron.test(email);
+        };
+
+        const mostrarMensajeError = (elementId, message) => {
+            const mensajeError = document.getElementById(elementId);
+            mensajeError.innerText = message;
+        };
+
+        const reseteoMensajeError = () => {
+            const todosMensajesError = document.querySelectorAll(".mensaje_error");
+            todosMensajesError.forEach((elemento) => {
+                elemento.innerText = "";
+            });
+            const inputs = document.querySelectorAll(".formInput");
+            inputs.forEach((input) => {
+                input.classList.remove("noEsValido");
+                input.classList.remove("esValido");
+            });
+        };
+    </script>
 </body>
 
 </html>

@@ -334,3 +334,14 @@ video{
 #weatherIcon {
     vertical-align: middle;
 }
+
+.mensaje_error{
+    color: rgb(220, 83, 83);
+}
+
+.esValido{
+    border-color: green;
+}
+.noEsValido{
+    border-color: red;
+}

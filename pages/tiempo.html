@@ -21,8 +21,8 @@
         <section>
             <h2>El tiempo en Rosario  <img id="weatherIcon" src="" alt=""></h2>
             <div>
-                <p><span>Ciudad:</span> <span id="city"></span></p>
                 <p><span>Temperatura:</span> <span id="temperature"></span> °C</p>
+                <p><span>Sensación Térmica:</span> <span id="sensac_term"></span> °C</p>
                 <p><span>Clima:</span> <span id="weather"></span></p>
                 <p><span>Humedad:</span> <span id="humidity"></span>%</p>
                 <p><span>Velocidad del Viento:</span> <span id="windSpeed"></span> km/h</p>
@@ -42,8 +42,8 @@
 
         async function updateWeatherCard(city) {
             const weatherData = await fetchWeather(city);
-            document.getElementById("city").textContent = weatherData.name;
             document.getElementById("temperature").textContent = weatherData.main.temp;
+            document.getElementById("sensac_term").textContent = weatherData.main.feels_like;
             document.getElementById("weather").textContent = weatherData.weather[0].description;
             document.getElementById("humidity").textContent = weatherData.main.humidity;
             var veloc = weatherData.wind.speed*3.6;
